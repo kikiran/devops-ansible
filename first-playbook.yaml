@@ -1,14 +1,13 @@
 ---
- - name: fist playbook
-   hosts: all
-   becomes: true
-   tasks:
-      - name: Install httpd software
-        yum:
-          - name: httpd
-            state: latest
-        service: 
-          name: httpd
-          service: started
-    
-
+- name: fist playbook
+  hosts: all
+  becomes: true
+  tasks:
+    - name: Install httpd software
+      yum:
+        name: httpd
+        state: latest
+    - name: start the web server
+      service: 
+        name: httpd
+        service: started
