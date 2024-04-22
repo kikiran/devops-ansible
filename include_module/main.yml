@@ -1,0 +1,10 @@
+---
+- name: call the child playbooks
+  become: true
+  hosts: dev
+  tasks:
+    - name: child playbooks
+      include_tasks: "{{item}}"
+      with_items: 
+        - child_folder.yml
+

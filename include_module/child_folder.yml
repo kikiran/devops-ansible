@@ -1,0 +1,5 @@
+---
+  - name: call the folder specified
+    file:
+      path: "/tmp/dev_newproject"
+      state: directory
