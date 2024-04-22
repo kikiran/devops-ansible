@@ -1,0 +1,19 @@
+---
+- name: variables
+  become: true
+  hosts: test
+  vars:
+    -a: httpd
+    -b: present
+    -c: restarted
+    -d: started
+  tasks:
+    - name: Install httpd software
+      yum:
+        name: "{{a}}"
+        state: {{b}}
+    - name: start the web server
+      service: 
+        name: {{a}}
+        service: {{d}}
+  
