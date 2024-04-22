@@ -3,17 +3,17 @@
   hosts:  dev
   become: true
   tasks:
-    - name: creating folder
+    - name: Creating folder in dev
       file: 
-        path: "/tmp/dev_project"
+        path: "/tmp/dev_project_new"
         state: directory
         notify: Create File
       handlers:
       - name: Create File
         file:
-          path: "/tmp/dev_directory/index.html"
+          path: "/tmp/dev_project_new/index.html"
           state: file
-          
+
 
 
         
