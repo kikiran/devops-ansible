@@ -1,6 +1,6 @@
 ---
 - name: handlers playbook
-  hosts: test
+  hosts: dev
   become: yes
   tasks:
     - name: install httpd software
