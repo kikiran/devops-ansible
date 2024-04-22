@@ -1,0 +1,15 @@
+---
+- name: Tags
+  hosts: all
+  become: true
+  tasks:
+    - name: Create folder in dev
+      file:
+        path: "/tmp/dev_directory"
+        state: directory
+      tags: a
+    - name: create test folder in test
+      file:
+        path: "/tmp/test_directory" 
+        state: directory
+        tags: b
