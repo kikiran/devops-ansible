@@ -1,0 +1,19 @@
+---
+- name: handlers playbook
+  hosts:  dev
+  become: true
+  tasks:
+    - name: creating folder
+      file: 
+        path: "/tmp/dev_project"
+        state: directory
+        notify: Create File
+      handlers:
+      - name: Create File
+        file:
+          path: "/tmp/dev_directory/index.html"
+          state: file
+          
+
+
+        
