@@ -1,19 +1,23 @@
 ---
 - name: handlers playbook
-  hosts:  dev
-  become: true
+  hosts: test
+  become: yes
   tasks:
-    - name: Create folder in dev
-      file: 
-        path: "/tmp/dev_project_new"
-        state: directory
-        notify: Create File
+    - name: install httpd software
+      yum:
+        name: httpd
+        state: latest
+    - name: start web server
+      service:
+        name: httpd
+        state: started
+    - name: copying the files
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+      notify: Restart web serve
   handlers:
-   - name: Create File
-     file:
-       path: "/tmp/dev_project_new/index.html"
-       state: file
-
-
-
-        
+    - name: Restart web server
+      service:
+        name: httpd
+        state: restarted
