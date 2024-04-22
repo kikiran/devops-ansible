@@ -3,10 +3,10 @@
   become: true
   hosts: test
   vars:
-    -a: httpd
-    -b: present
-    -c: restarted
-    -d: started
+    - a: httpd
+    - b: present
+    - c: restarted
+    - d: started
   tasks:
     - name: Install httpd software
       yum:
