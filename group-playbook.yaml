@@ -5,5 +5,5 @@
   tasks:
    - name : git instllation
      yum:
-      name : git Install
+      name : git install
       state: latest
