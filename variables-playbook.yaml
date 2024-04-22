@@ -11,9 +11,9 @@
     - name: Install httpd software
       yum:
         name: "{{a}}"
-        state: {{b}}
+        state: "{{b}}"
     - name: start the web server
       service: 
-        name: {{a}}
-        service: {{d}}
+        name: "{{a}}"
+        service: "{{d}}"
   
