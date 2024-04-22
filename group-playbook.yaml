@@ -1,0 +1,9 @@
+---
+- name : group playbook
+  hosts : dev
+  becomes : true
+  tasks:
+   - name : git instllation
+     yum:
+      name : git Install
+      state: latest
